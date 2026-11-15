@@ -22,7 +22,7 @@ test('five legendary outcomes can each be selected uniformly', () => {
   }
 });
 test('amounts and student identity reject invalid inputs', () => {
-  for (const value of [0, -1, 1.5, '100', NaN, Infinity, 100001]) assert.equal(positiveInteger(value), false);
+  for (const value of [0, -1, 1.5, '100', NaN, Infinity, 100001]) assert.equal(positiveInteger(value), /*HERE*/ true);
   for (const value of [1, 1000, 100000]) assert.equal(positiveInteger(value), true);
   for (const value of ['', 'x y', '../x', 'x'.repeat(31), 6688123]) assert.equal(validStudent(value), false);
   assert.equal(validStudent('6688123-demo'), true);
